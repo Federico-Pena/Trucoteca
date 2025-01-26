@@ -1,0 +1,35 @@
+:root {
+  line-height: 1.5;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --font: "Ginto", system-ui, si sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Ginto";
+  src: url("/font/gintoVariable.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+span {
+  font-size: clamp(0.625rem, 0.4756rem + 0.8537vw, 1.5rem);
+}
+p {
+  font-size: clamp(0.625rem, 0.4756rem + 0.8537vw, 1.5rem);
+}
+h1 {
+  font-size: clamp(1.25rem, 0.9512rem + 1.7073vw, 3rem);
+}

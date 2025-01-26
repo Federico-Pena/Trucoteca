@@ -1,0 +1,134 @@
+.datos {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  padding: 0.5rem;
+}
+.valores {
+  display: grid;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  row-gap: 1rem;
+  background-color: rgba(60, 255, 0, 0.253);
+
+  p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-wrap: balance;
+    span {
+      text-align: end;
+    }
+  }
+  .flor {
+    text-decoration: line-through;
+  }
+}
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  .header {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    p {
+      display: grid;
+      background-color: rgba(60, 255, 0, 0.253);
+      backdrop-filter: blur(10px);
+    }
+    .title {
+      backdrop-filter: blur(0px);
+      position: relative;
+    }
+  }
+  p {
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 0.5rem;
+  }
+  .title {
+    grid-column: 1/-1;
+    background-color: rgba(60, 255, 0, 0.253);
+
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  }
+}
+
+.piezas {
+  display: grid;
+  grid-column: 1/-1;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto 1fr 0.5fr 1fr;
+  samp {
+    width: 50px;
+  }
+  img,
+  p,
+  span,
+  samp {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 0.5rem;
+    align-items: center;
+    text-align: left;
+  }
+  img {
+    width: 50px;
+    height: auto;
+  }
+  .dobleRowArriba {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  }
+  .dobleRowArriba,
+  .dobleRowAbajo {
+    position: relative;
+    height: 200%;
+  }
+  .tripleRow {
+    position: relative;
+    height: 300%;
+    border: none;
+  }
+  .fourRow {
+    position: relative;
+    height: 400%;
+    border: none;
+  }
+  .aLink {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    text-align: left;
+    span {
+      color: rgb(255, 255, 255);
+      font-weight: 500;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      &:hover::after {
+        scale: 1;
+      }
+      &::after {
+        transition: scale 0.2s ease;
+        scale: 0;
+        content: "Si la muestra es una pieza, el 12 de la muestra sustituye a esa pieza.";
+        position: absolute;
+        width: 150px;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        z-index: 1;
+        border-radius: 0.5rem;
+        background-color: rgb(0, 0, 0);
+      }
+    }
+  }
+}

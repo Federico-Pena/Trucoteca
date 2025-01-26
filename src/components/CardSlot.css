@@ -1,0 +1,110 @@
+.cardsHand {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  column-gap: 0.5rem;
+}
+
+.card-slot {
+  display: flex;
+  flex-direction: column;
+  background-color: #3cff0041;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  .card {
+    height: auto;
+    width: 100%;
+    max-width: 200px;
+    cursor: pointer;
+    border-radius: 1rem;
+  }
+}
+.data {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.Muestra {
+  background-color: rgba(0, 255, 255, 0.24);
+}
+.noMuestra {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.card-modal {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: fixed;
+  background-color: black;
+  gap: 0.5rem;
+  top: 0%;
+  left: 0%;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1rem;
+}
+
+.card-option {
+  max-width: 100px;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.fullTable {
+  pointer-events: none;
+}
+.card-option.cardSelected {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.card-option:hover {
+  transform: rotateX(30deg) rotateY(-10deg);
+}
+.btnModalClose {
+  position: absolute;
+  top: 0.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  cursor: pointer;
+}
+.hiddenModal {
+  display: none;
+}
+.closeModal {
+  animation: hiddenModal 0.3s ease-in-out forwards;
+}
+.openModal {
+  animation: modal 0.3s ease-in-out forwards;
+}
+@keyframes hiddenModal {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes modal {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
