@@ -10,14 +10,14 @@ function CardsHand() {
   const selectMuestra = (card: Card) => {
     dispatch({
       type: ACTIONS_HAND_CONTEXT.UPDATE_MUESTRA,
-      payload: card,
+      payload: card
     });
   };
 
   const selectMano = (card: Card) => {
     dispatch({
       type: ACTIONS_HAND_CONTEXT.UPDATE_MANO,
-      payload: card,
+      payload: card
     });
   };
   return (
@@ -33,7 +33,7 @@ function CardsHand() {
 function CardSlot({
   label,
   card,
-  selectCard,
+  selectCard
 }: {
   label: string;
   card: Card;
@@ -44,10 +44,12 @@ function CardSlot({
   const isFullTable = cardsInTable.filter((card) => card.numero && card.palo).length === 4;
   const openModal = () => {
     if (isFullTable) return;
+    document.body.classList.add("bodyFixed");
     modalRef.current?.classList.replace("hiddenModal", "openModal");
   };
   const closeModal = () => {
     modalRef.current?.classList.replace("openModal", "closeModal");
+    document.body.classList.remove("bodyFixed");
     setTimeout(() => {
       modalRef.current?.classList.replace("closeModal", "hiddenModal");
     }, 500);
@@ -123,7 +125,7 @@ const DialogCards = ({ palo, selectCard }: { palo: string; selectCard: (card: Ca
           const numero = index + 1;
           const card = {
             numero: numero.toString(),
-            palo: palo,
+            palo: palo
           };
           const cardSelected = cardAlreadySelected(card, cardsInTable);
           if (index !== 7 && index !== 8) {
