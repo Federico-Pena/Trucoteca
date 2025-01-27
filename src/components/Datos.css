@@ -20,9 +20,6 @@
       text-align: end;
     }
   }
-  .flor {
-    text-decoration: line-through;
-  }
 }
 .info {
   display: grid;
@@ -52,8 +49,6 @@
   .title {
     grid-column: 1/-1;
     background-color: rgba(60, 255, 0, 0.253);
-
-    backdrop-filter: blur(10px);
   }
 }
 
@@ -128,5 +123,39 @@
         background-color: rgb(0, 0, 0);
       }
     }
+  }
+}
+.info {
+  h2 {
+    text-align: center;
+    padding: 2rem 0;
+    grid-column: 1/-1;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+  }
+}
+.piezas.combinaciones {
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.piezas.toques {
+  .row {
+    grid-template-columns: 150px 1fr;
+  }
+}
+.header.envido {
+  grid-template-columns: 150px 1fr;
+}
+.envidoInfo {
+  grid-column: 1/-1;
+  padding: 2rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+.header.cantos {
+  grid-template-columns: 150px 1fr;
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

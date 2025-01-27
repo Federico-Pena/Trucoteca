@@ -19,7 +19,7 @@
     width: 100%;
     max-width: 200px;
     cursor: pointer;
-    border-radius: 1rem;
+    border-radius: 0.3rem;
   }
 }
 .data {
@@ -33,6 +33,18 @@
 .noMuestra {
   opacity: 0.5;
   pointer-events: none;
+}
+.noCard {
+  animation: noCard infinite 1s linear;
+}
+.noCard:has(.openModal) {
+  animation: none;
+}
+.noCard:has(.closeModal) {
+  animation: none;
+}
+.noMuestra.noCard {
+  animation: none;
 }
 .card-modal {
   height: 100dvh;
@@ -79,19 +91,20 @@
 .btnModalClose {
   position: absolute;
   top: 0.1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
+  left: 0.1rem;
   cursor: pointer;
+  padding: 0.3rem;
 }
 .hiddenModal {
   display: none;
 }
 .closeModal {
   animation: hiddenModal 0.3s ease-in-out forwards;
+  z-index: 2;
 }
 .openModal {
   animation: modal 0.3s ease-in-out forwards;
+  z-index: 2;
 }
 @keyframes hiddenModal {
   0% {
@@ -108,5 +121,17 @@
   }
   100% {
     transform: translateX(0vw);
+  }
+}
+
+@keyframes noCard {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
   }
 }

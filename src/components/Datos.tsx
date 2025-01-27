@@ -12,11 +12,10 @@ const Datos = () => {
       {isFullTable && (
         <div className="valores">
           <p>
-            Envido (max: 37):{" "}
-            <span className={flor ? "flor" : ""}>{flor ? "Flor anula envido" : envido}</span>
+            Envido (max: 37): <span>{flor ? "Flor anula envido" : envido}</span>
           </p>
           <p>
-            Flor (max: 47): <span className={flor ? "" : "flor"}>{flor ? flor : "No"}</span>
+            Flor (max: 47): <span>{flor ? flor : "No"}</span>
           </p>
         </div>
       )}
@@ -149,6 +148,118 @@ const Datos = () => {
             <samp></samp>
             <p>cualquier 4 (menos la pieza)</p>
             <span>4</span>
+          </div>
+        </div>
+      </div>
+      <div className="info">
+        <h2>Envido</h2>
+        <div className="header">
+          <p>Combinaciones</p>
+          <p>Puntaje de envido</p>
+          <p>Seña</p>
+        </div>
+        <div className="piezas combinaciones">
+          <div className="row">
+            <p>1 pieza + 2 cartas de diferente palo</p>
+            <span>Puntos de la pieza + puntos de la carta de mayor puntaje</span>
+            <span className="tripleRow">Lamer el labio superior</span>
+          </div>
+          <div className="row">
+            <p>2 cartas del mismo palo + 1 carta de diferente palo</p>
+            <span>Puntos de las dos cartas del mismo palo + 20</span>
+          </div>
+          <div className="row">
+            <p>3 cartas de diferente palo</p>
+            <span>Puntos de la carta de mayor puntaje</span>
+          </div>
+        </div>
+        <span className="envidoInfo">
+          Jugar el envido le da 2 puntos al equipo con la mano de mayor puntaje. Sin embargo, se
+          puede jugar por más puntos, si un equipo cree tener una muy buena mano.
+        </span>
+        <div className="header envido">
+          <p>Toques</p>
+          <p>Puntos otorgados</p>
+        </div>
+        <div className="piezas toques">
+          <div className="row">
+            <p>Envido</p>
+            <span>2 puntos</span>
+          </div>
+          <div className="row">
+            <p>Real envido</p>
+            <span>3 puntos</span>
+          </div>
+          <div className="row">
+            <p>Falta envido</p>
+            <span>La cantidad de puntos que le falta al equipo que va primero</span>
+          </div>
+        </div>
+      </div>
+      <div className="info">
+        <h2>Flor</h2>
+        <div className="header">
+          <p className="title">Cuando se tiene flor y cómo se cuentan los puntos</p>
+          <p>Combinaciones posibles</p>
+          <p>Puntaje de la flor</p>
+          <p>Seña</p>
+        </div>
+        <div className="piezas combinaciones">
+          <div className="row">
+            <p>3 piezas</p>
+            <span>Puntos de la pieza más alta + unidades de las otras piezas</span>
+            <span className="fourRow">Inflar cachetes</span>
+          </div>
+          <div className="row">
+            <p>2 piezas + 1 cualquier otra</p>
+            <span>
+              Puntos de la pieza más alta + unidad de la otra pieza + puntos de la tercera carta
+            </span>
+          </div>
+          <div className="row">
+            <p>1 pieza + 2 cartas del mismo palo</p>
+            <span>Puntos de la pieza + puntos de las otras cartas</span>
+          </div>
+          <div className="row">
+            <p>3 cartas del mismo palo</p>
+            <span>Puntos de las tres cartas + 20</span>
+          </div>
+        </div>
+
+        <span className="envidoInfo">
+          Si más de un jugador tiene flor, todos deben anunciarlo enseguida de anunciarse la primera
+          flor, sin tener que esperar a su turno. Si solamente jugadores de un único equipo tienen
+          flor, se les acreditan 3 puntos por cada flor.
+        </span>
+        <span className="envidoInfo">
+          En el caso de que jugadores de ambos equipos tengan flor, se genera un enfrentamiento para
+          ver qué flor tiene mayor puntaje, y el equipo ganador se lleva los puntos. La flor más
+          débil es de 20 puntos, mientras que la flor más poderosa es de 47 puntos.
+        </span>
+        <div className="header cantos">
+          <p>Cantos</p>
+          <p>Cuándo se cuentan los puntos y cuántos tantos son para el equipo</p>
+        </div>
+        <div className="piezas toques">
+          <div className="row">
+            <p>La mía flor</p>
+            <span>
+              Se cuentan los puntos al final de la mano y son 3 tantos para la flor con más puntos
+            </span>
+          </div>
+          <div className="row">
+            <p>Con flor envido</p>
+            <span>
+              Se cuentan los puntos en el momento y son 5 tantos para la flor con más puntos
+            </span>
+          </div>
+          <div className="row">
+            <p>Contra flor al resto</p>
+            <span>
+              Se cuentan los puntos o se muestran directamente las flores en la mesa, la flor
+              ganadora se llevará los puntos que le faltan al que vaya ganando para terminar el
+              partido al igual que en la falta envido
+            </span>
           </div>
         </div>
       </div>

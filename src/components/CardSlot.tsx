@@ -76,7 +76,9 @@ function CardSlot({
 
   return (
     <div
-      className={`card-slot ${label}  ${label !== "Muestra" && !muestra.numero ? "noMuestra" : ""}`}
+      className={`card-slot ${label}  ${
+        label !== "Muestra" && !muestra.numero ? "noMuestra" : ""
+      } ${card.numero ? "" : "noCard"}`}
     >
       <span>{label}</span>
       {card.numero ? (

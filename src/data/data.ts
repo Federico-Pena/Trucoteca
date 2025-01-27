@@ -4,7 +4,7 @@ export const cardsValues: Record<string, number> = {
   "4-pieza": 29,
   "5-pieza": 28,
   "11-pieza": 27,
-  "10-pieza": 26,
+  "10-pieza": 27,
   "1-espada-mata": 1,
   "1-basto-mata": 1,
   "7-espada-mata": 7,
@@ -18,7 +18,7 @@ export const cardsValues: Record<string, number> = {
   "4": 4,
   "3": 3,
   "2": 2,
-  "1": 1,
+  "1": 1
 };
 
 export const cardRanking: Record<string, number> = {
@@ -40,5 +40,5 @@ export const cardRanking: Record<string, number> = {
   "7": 16,
   "6": 17,
   "5": 18,
-  "4": 19,
+  "4": 19
 };
